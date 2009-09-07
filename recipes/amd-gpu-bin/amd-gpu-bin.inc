@@ -18,8 +18,11 @@ FILES_${PN}-samples = "${bindir}/*"
 do_compile() { 
 
 # clutter need those library names (probably not the best way to do it..)
+	if [ -e usr/lib/gles20.so ]
+	then
         ${CXX}  -shared -o usr/lib/libGLESv2.so -lgles20 -Lusr/lib
         ${CXX}  -shared -o usr/lib/libEGL.so -legl13 -Lusr/lib
+	fi
 }
 my_install(){
 	my_bindir=$1
