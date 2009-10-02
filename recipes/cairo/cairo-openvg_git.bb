@@ -1,6 +1,6 @@
 require cairo.inc
-PROVIDES += "cairo"
-CONFLICTS += "cairo"
+#PROVIDES += "cairo"
+#CONFLICTS += "cairo"
 DEPENDS += "virtual/vg"
 SRCREV = "67d40e5c7300c4082484dbda5c81808737bb2ac5"
 PV = "1.9_git"

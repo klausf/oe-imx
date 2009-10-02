@@ -376,7 +376,7 @@ def package_qa_hash_style(path, name, d, elf):
     for line in os.popen("LC_ALL=C PATH=%s %s -p '%s' 2> /dev/null" % (env_path, objdump, path), "r"):
         if "NEEDED" in line or "INIT" in line:
             sane = False
-            elf = True
+            #elf = True
         if "GNU_HASH" in line:
             sane = True
         if "[mips32]" in line or "[mips64]" in line:
