@@ -1,15 +1,16 @@
-require xf86-video-common.inc
+require xorg-driver-video.inc
 
 EXTRA_OECONF += "--disable-xvmc"
 
-FSLPN="xserver-xorg-video-imx"
+FSL_PN="xserver-xorg-video-imx"
 
 DESCRIPTION = "X.Org X server -- fbdev display driver"
 DEPENDS += "virtual/libx11 libz160 imx-lib  virtual/kernel xextproto libxext"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI="${FSL_IPP}/${FSLPN}-${PV}.tar.gz"
+SRC_URI="${FSL_IPP}/${FSL_PN}-${PV}.tar.gz"
+S = "${WORKDIR}/${FSL_PN}-${PV}"
 
 CFLAGS_append+=" -I${STAGING_KERNEL_DIR}/include"
 
